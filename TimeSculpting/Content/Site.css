@@ -1,0 +1,102 @@
+﻿/*
+    base: hsl(209, 30%, 24%); #2b3e50; rgb(43, 62, 80);
+    base shadow: hsl(209, 30%, 12%); #151f28; rgb(21, 31, 40);
+    blue #c9fffc
+    orange #ffe3c9
+red #ffc9cb
+
+    blue 	#c9fffc
+	hsl(177, 100%, 89%)
+dark blue 
+	#014c48
+	hsl(177, 98%, 15%)
+light blue
+	#e9fcfb
+	hsl(177, 75%, 95%)
+*/
+
+
+div.jumbotron h1, div.jumbotron .h1 {
+    font-size: 32px;
+    text-shadow: 2px 2px 2px black;
+}
+
+body {
+    background-color: #013835;
+}
+
+/*#consultationRequestForm {
+}
+
+.consultationRequestFormContainer {
+    
+}*/
+
+#SendConsultationRequest {
+    float: right;
+    margin: 25px 0 50px 0;
+}
+
+div.jumbotron {
+    background-image: url('img/TbirdSunrise2.jpg');
+    background-size: 100% cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom-color: #e9fcfb;
+    text-shadow: 2px 2px 2px black;
+    margin: 35px;
+}
+
+    div.jumbotron input, div.jumbotron textarea {
+        opacity: .8;
+        /*background-color: transparent;*/
+        color: #151f28;
+        /*border: 1px solid #r;
+        border-bottom-color: #e9fcfb;
+        text-shadow: 2px 2px 2px #02e3d8;
+        border-radius: 4px;*/
+    }
+
+    div.jumbotron h1 {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+.tsHeaderNav {
+    color: black !important;
+    background-color: #c9fffc;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-color: #e9fcfb;
+}
+
+a.navbar-brand.TSlogo {
+    color: #014c48;
+}
+a#registerLink {
+    color: #014c48;
+    display: none;
+}
+
+a#loginLink {
+    color: #014c48;
+    display: none;
+}
+
+#SendConsultationRequest {
+    background-color: #e9fcfb;
+    color: #014c48;
+    border: solid;
+    border-color: #e9fcfb;
+    border-width: 2px;
+    /*box-shadow: 2px 2px 2px #02e3d8;*/
+    /*text-shadow: 1px 1px 1px black;*/
+}
+
+div.row {
+    color: #e9fcfb;
+}
+div.consultationRequestFormContainer {
+    /*box-shadow: 2px 2px 2px black;*/
+}

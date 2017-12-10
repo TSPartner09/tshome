@@ -1,0 +1,52 @@
+﻿/*
+    light: #3b89a6
+    dark:  #4e7b8c
+*/
+
+body {
+    background-color: #295f73;
+}
+
+.tsHeaderNav {
+    background-color: #295f73;
+    /*box-shadow: 0 3px 3px #3b89a6;*/
+    /*display: none;*/
+    border-bottom: 1px solid #3b89a6;
+    margin-bottom: 60px;
+}
+
+div.jumbotron {
+    background-image: none;
+    background-color: #456a78;
+    /*display:none;*/
+}
+
+hr {
+    border-top: 1px solid #295f73;
+}
+
+.tsBanner, #tsMainPageHead.jumbotron.container {
+    margin: 95px 0px 75px 0px;
+    border-radius: 8px !important;
+    border: 1px solid #3b89a6;
+    background-color: #3b89a6;
+    color: white;
+    padding: 20px 20px 20px 20px;
+    /*box-shadow: 3px 3px 3px #3b89a6;*/
+    /*display: none;*/
+}
+
+
+.tsBanner h1 {
+    font-size: 48px;
+}
+
+.TSlogo {
+    font-size: 48px;
+    padding: 10px 0px 0px 0;
+}
+
+#SendConsultationRequest {
+    background-color: #8c524e;
+    margin-top: 24px;
+}

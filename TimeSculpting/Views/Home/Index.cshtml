@@ -1,0 +1,115 @@
+﻿@model TimeSculpting.ViewModels.HomeIndexVM
+@*@using BotDetect.Web.Mvc;
+
+
+    @{ MvcCaptcha exampleCaptcha = new MvcCaptcha("ExampleCaptcha"); }*@
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@Styles.Render("~/Content/css")
+
+<div id="tsMainPageHead" class="jumbotron tsBanner">
+    <div class="col-xs-12">
+        <h1>Custom Application Development</h1>
+        <p class="lead">Give us your business case. We will give you a compelling functional solution.</p>
+
+    </div>
+    @Html.Partial("RequestConsultation", Model.ConsultationRequest)
+
+</div>
+
+<div class="row">
+    <div class="col-md-4 tsPagePart">
+        <h2>Decades of Enterprise level experience</h2>
+        @*<p>.</p>*@
+        @*<p>
+                <a class="btn btn-default" href="http://www.google.com">Learn more &raquo;</a>
+            </p>*@
+    </div>
+    <div class="col-md-4 tsPagePart">
+        <h2>Proficient in industry standard best practices</h2>
+        @*<p>.</p>*@
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+    </div>
+    <div class="col-md-4 tsPagePart">
+        <h2>Based in Norman Oklahoma</h2>
+        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="consultationForm" tabindex="-1" role="dialog" aria-labelledby="consultationFormLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="consultationRequestForm" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="consultationFormLabel">Request Consulation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @Html.AntiForgeryToken()
+                    @*<label for="EmailAddress"></label>*@
+                    @*<input type="email" id="EmailAddress" name="EmailAddress" class="form-control" placeholder="Email Address"/>*@
+
+                    <span class="tsFieldContainer">
+                        @*@{
+
+                                // field/property is 'required', mark assiciated label accordingly.
+                                // map this behavior as an inheritable property in TS Library
+
+
+                                var tsRequired = Model.ConsultationRequest.EmailAddress
+                            }*@
+                        @Html.LabelFor(m => m.ConsultationRequest.EmailAddress)
+                        @Html.TextBoxFor(m => m.ConsultationRequest.EmailAddress, new { required = "required", @class = "form-control", placeholder = "Email Address" })
+                        @Html.ValidationMessageFor(m => m.ConsultationRequest.EmailAddress)
+                    </span>
+                    <div>
+                        @*@Html.Captcha(exampleCaptcha)
+                            @Html.TextBox("CaptchaCode")*@
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="SendConsultationRequest" type="button" class="btn btn-success">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        $(function () {
+
+            $('#EmailAddress').focus();
+            //$('.tsHeaderNav').fadeIn();
+
+            $('#SendConsultationRequest').click(function () {
+                //var magicMadeUpForm = $('<form>');
+
+                var consultationRequestForm = $('#consultationRequestForm');
+                var validator = $(consultationRequestForm).validate();
+                if (consultationRequestForm.valid()) {
+                    $.post('@Url.Action("RequestConsultation")', consultationRequestForm.serialize(), function (requestResponse) {
+                        //alert(requestResponse);
+                    });
+                } else {
+                    //alert('nope');
+                }
+            });
+        });
+    </script>
+}
